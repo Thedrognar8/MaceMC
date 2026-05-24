@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="description" content="Join MaceMC, the ultimate Minecraft Survival Network with custom combat, Factions, PvP Arena, and a vibrant community. Forge your legend on macemc.com!">
+        <meta name="keywords" content="Minecraft Server, MaceMC, Survival, Factions, PvP Arena, Sky Wars, Minecraft Survival Network, Custom Ranks, Minecraft Community">
+        <meta name="author" content="MaceMC Team">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#0a0a0b">
+        <link rel="canonical" href="https://macemc.com/">
+        
+        <!-- Open Graph / Social Media -->
+        <meta property="og:title" content="MaceMC — Forge Your Legend | Minecraft Survival Network">
+        <meta property="og:description" content="Custom combat, Factions, ranked PvP, and a legendary community. Play now on macemc.com!">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://macemc.com/">
+        <meta property="og:image" content="https://via.placeholder.com/1200x630?text=MaceMC+Legendary+Server">
+        <meta property="og:site_name" content="MaceMC">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="MaceMC — Forge Your Legend">
+        <meta name="twitter:description" content="Join the best Minecraft Survival Network. Custom features, active community, and epic ranks.">
+        <meta name="twitter:image" content="https://via.placeholder.com/1200x630?text=MaceMC+Server">
+        
+        <title>MaceMC — Forge Your Legend | Minecraft Survival Network</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+        
+        <!-- Structured Data (Organization + SoftwareApplication) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "MaceMC",
+          "url": "https://macemc.com",
+          "logo": "https://macemc.com/logo.png",
+          "sameAs": [
+            "https://discord.gg/macemc",
+            "https://twitter.com/macemc"
+          ],
+          "description": "Premium Minecraft Survival Network offering custom combat, Factions, PvP Arena, and community events."
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "MaceMC Minecraft Server",
+          "applicationCategory": "Game",
+          "operatingSystem": "Any",
+          "description": "A feature-rich Minecraft server with unique ranks, player economy, and zero-lag gameplay.",
+          "url": "https://macemc.com",
+          "gamePlatform": "Minecraft Java Edition",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "128"
+          }
+        }
+        </script>
+        
+        <style>
+            /* ===== RESET & VARIABLES (improved contrast for stats) ===== */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --obsidian: #0a0a0b;
+                --dark-stone: #111114;
+                --stone: #1a1a20;
+                --stone-mid: #242430;
+                --stone-light: #2e2e3a;
+                --mace-gold: #c9930a;
+                --mace-gold-bright: #f0b720;
+                --mace-gold-pale: #f5d67a;
+                --emerald: #1aad5e;
+                --emerald-bright: #22d474;
+                --emerald-glow: #0eff8633;
+                --blood: #8b1a1a;
+                --text-bright: #f0ead6;
+                --text-mid: #a89f8a;
+                --text-dim: #5a5548;
+                --border: #2a2a35;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background-color: var(--obsidian);
+                color: var(--text-bright);
+                font-family: "Crimson Text", serif;
+                font-size: 18px;
+                line-height: 1.65;
+                overflow-x: hidden;
+                cursor: default;
+            }
+
+            /* noise overlay */
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+                pointer-events: none;
+                z-index: 9999;
+                opacity: 0.35;
+            }
+
+            /* navigation */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 3rem;
+                height: 70px;
+                background: linear-gradient(to bottom, rgba(10, 10, 11, 0.97), rgba(10, 10, 11, 0.85));
+                border-bottom: 1px solid var(--border);
+                backdrop-filter: blur(8px);
+            }
+
+            .nav-logo {
+                font-family: "Cinzel Decorative", serif;
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: var(--mace-gold-bright);
+                text-decoration: none;
+                letter-spacing: 0.05em;
+                text-shadow: 0 0 24px rgba(240, 183, 32, 0.4);
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 2.5rem;
+                list-style: none;
+            }
+
+            .nav-links a {
+                font-family: "Cinzel", serif;
+                font-size: 0.72rem;
+                font-weight: 600;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--text-mid);
+                text-decoration: none;
+                transition: color 0.25s;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: var(--mace-gold-bright);
+                transform: scaleX(0);
+                transition: transform 0.25s;
+                transform-origin: left;
+            }
+
+            .nav-links a:hover {
+                color: var(--mace-gold-pale);
+            }
+            .nav-links a:hover::after {
+                transform: scaleX(1);
+            }
+
+            .nav-ip {
+                font-family: "Cinzel", serif;
+                font-size: 0.7rem;
+                letter-spacing: 0.1em;
+                color: var(--emerald-bright);
+                background: rgba(26, 173, 94, 0.1);
+                border: 1px solid rgba(26, 173, 94, 0.3);
+                padding: 0.4rem 1rem;
+                border-radius: 2px;
+                cursor: pointer;
+                transition: all 0.25s;
+                position: relative;
+            }
+
+            .nav-ip:hover {
+                background: rgba(26, 173, 94, 0.2);
+                box-shadow: 0 0 16px rgba(34, 212, 116, 0.2);
+            }
+
+            .toast-msg {
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
+                background: var(--emerald);
+                color: #0a0a0b;
+                font-family: "Cinzel", serif;
+                font-weight: bold;
+                padding: 0.6rem 1.5rem;
+                border-radius: 40px;
+                font-size: 0.85rem;
+                letter-spacing: 0.05em;
+                z-index: 10000;
+                transition: transform 0.2s ease;
+                pointer-events: none;
+                white-space: nowrap;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            }
+            .toast-msg.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            /* hero and rest - STATS CONTRAST FIX */
+            .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; padding: 6rem 2rem 4rem; overflow: hidden; }
+            .hero::before { content: ""; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 900px; height: 600px; background: radial-gradient(ellipse, rgba(201, 147, 10, 0.07) 0%, transparent 70%); pointer-events: none; }
+            .hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, var(--obsidian), transparent); pointer-events: none; }
+            .hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(42, 42, 53, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(42, 42, 53, 0.3) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at center, black 0%, transparent 70%); }
+            .hero-ornament { font-size: 2rem; color: var(--mace-gold); opacity: 0.6; letter-spacing: 1rem; margin-bottom: 1.5rem; animation: fadeDown 1s ease both; }
+            @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 0.6; transform: translateY(0); } }
+            .hero-title { font-family: "Cinzel Decorative", serif; font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.01em; animation: fadeUp 1s ease 0.2s both; }
+            .hero-title .line1 { display: block; color: var(--text-bright); }
+            .hero-title .line2 { display: block; color: var(--mace-gold-bright); text-shadow: 0 0 40px rgba(240, 183, 32, 0.5), 0 0 80px rgba(240, 183, 32, 0.2); }
+            @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+            .hero-divider { width: 180px; height: 2px; background: linear-gradient(to right, transparent, var(--mace-gold), transparent); margin: 2rem auto; }
+            .hero-sub { font-family: "Cinzel", serif; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-mid); }
+            .hero-tagline { font-style: italic; font-size: 1.25rem; color: var(--text-mid); max-width: 520px; margin: 1.5rem auto 0; }
+            .hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; }
+            .btn { font-family: "Cinzel", serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.5rem; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; position: relative; overflow: hidden; }
+            .btn::before { content: ""; position: absolute; inset: 0; background: rgba(255, 255, 255, 0.05); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+            .btn:hover::before { transform: scaleX(1); }
+            .btn-primary { background: var(--mace-gold); color: var(--obsidian); clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+            .btn-primary:hover { background: var(--mace-gold-bright); box-shadow: 0 0 30px rgba(240, 183, 32, 0.4); transform: translateY(-2px); }
+            .btn-secondary { background: transparent; color: var(--text-bright); border: 1px solid var(--stone-light); clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+            .btn-secondary:hover { border-color: var(--mace-gold); color: var(--mace-gold-pale); transform: translateY(-2px); }
+            
+            /* ========== IMPROVED STATS CONTRAST & LEGIBILITY ========== */
+            .hero-stats { 
+                display: flex; 
+                gap: 3rem; 
+                justify-content: center; 
+                margin-top: 4rem;
+                flex-wrap: wrap;
+            }
+            .stat { 
+                text-align: center; 
+                background: rgba(0, 0, 0, 0.35);
+                backdrop-filter: blur(4px);
+                padding: 0.75rem 1.5rem;
+                border-radius: 8px;
+                border: 1px solid rgba(240, 183, 32, 0.2);
+                min-width: 140px;
+            }
+            .stat-number { 
+                font-family: "Cinzel Decorative", serif; 
+                font-size: 2.6rem; 
+                font-weight: 900; 
+                color: #ffea9e; 
+                line-height: 1.1; 
+                display: flex; 
+                align-items: baseline; 
+                justify-content: center; 
+                gap: 6px; 
+                text-shadow: 0 0 12px rgba(240, 183, 32, 0.7), 0 2px 4px black;
+                letter-spacing: 0.02em;
+            }
+            .stat-number .online-dot { 
+                width: 12px; 
+                height: 12px; 
+                border-radius: 50%; 
+                background: var(--emerald-bright); 
+                box-shadow: 0 0 14px var(--emerald-bright); 
+                animation: pulse 2s ease-in-out infinite; 
+                margin-right: 6px; 
+                flex-shrink: 0; 
+                margin-bottom: 4px; 
+            }
+            @keyframes pulse { 
+                0%,100% { opacity: 1; transform: scale(1); } 
+                50% { opacity: 0.6; transform: scale(0.85); } 
+            }
+            .stat-label { 
+                font-family: "Cinzel", serif; 
+                font-size: 0.72rem; 
+                font-weight: 600;
+                letter-spacing: 0.22em; 
+                text-transform: uppercase; 
+                color: #e5dbbc; 
+                margin-top: 8px;
+                text-shadow: 0 1px 1px black;
+            }
+            .stat-divider { 
+                width: 1px; 
+                background: linear-gradient(to bottom, transparent, var(--mace-gold), transparent); 
+                height: 60px; 
+                align-self: center; 
+                opacity: 0.5;
+            }
+            @media (max-width: 640px) {
+                .hero-stats { gap: 1rem; }
+                .stat { padding: 0.5rem 0.8rem; min-width: 110px; }
+                .stat-number { font-size: 2rem; }
+                .stat-label { font-size: 0.6rem; letter-spacing: 0.15em; }
+                .stat-divider { display: none; }
+            }
+            
+            /* rest of original styles */
+            .ip-banner { background: linear-gradient(135deg, var(--dark-stone), var(--stone)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; position: relative; }
+            .ip-banner-label { font-family: "Cinzel", serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.75rem; }
+            .ip-banner-address { font-family: "Cinzel Decorative", serif; font-size: clamp(1.4rem, 4vw, 2.5rem); color: var(--emerald-bright); text-shadow: 0 0 30px rgba(34, 212, 116, 0.3); cursor: pointer; transition: all 0.25s; display: inline-block; letter-spacing: 0.05em; }
+            .ip-banner-address:hover { text-shadow: 0 0 50px rgba(34, 212, 116, 0.6); transform: scale(1.02); }
+            section { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
+            .section-header { text-align: center; margin-bottom: 4rem; }
+            .section-eyebrow { font-family: "Cinzel", serif; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mace-gold); margin-bottom: 1rem; }
+            .section-title { font-family: "Cinzel Decorative", serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--text-bright); line-height: 1.15; }
+            .section-title em { font-style: normal; color: var(--mace-gold-bright); }
+            .section-line { width: 80px; height: 2px; background: linear-gradient(to right, transparent, var(--mace-gold), transparent); margin: 1.5rem auto 0; }
+            .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); }
+            .feature-card { background: var(--dark-stone); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
+            .feature-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(to bottom, var(--mace-gold), transparent); transform: scaleY(0); transform-origin: top; transition: transform 0.4s ease; }
+            .feature-card:hover { background: var(--stone); }
+            .feature-card:hover::before { transform: scaleY(1); }
+            .feature-icon { font-size: 2.5rem; margin-bottom: 1.25rem; display: block; filter: drop-shadow(0 0 8px rgba(240, 183, 32, 0.3)); }
+            .feature-title { font-family: "Cinzel", serif; font-size: 1rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+            .feature-desc { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; }
+            .modes-section { background: var(--dark-stone); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+            .modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+            .mode-card { background: var(--stone); border: 1px solid var(--border); padding: 2rem; text-align: center; position: relative; transition: all 0.35s; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+            .mode-card:hover { border-color: rgba(201, 147, 10, 0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); }
+            .mode-emoji { font-size: 3rem; margin-bottom: 1rem; }
+            .mode-name { font-family: "Cinzel", serif; font-size: 1.1rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.5rem; }
+            .mode-tag { display: inline-block; font-family: "Cinzel", serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; margin-bottom: 1rem; }
+            .mode-tag.live { background: rgba(26, 173, 94, 0.15); color: var(--emerald-bright); border: 1px solid rgba(26, 173, 94, 0.3); }
+            .mode-tag.soon { background: rgba(201, 147, 10, 0.1); color: var(--mace-gold-pale); border: 1px solid rgba(201, 147, 10, 0.25); }
+            .mode-tag.new { background: rgba(139, 26, 26, 0.15); color: #e06060; border: 1px solid rgba(139, 26, 26, 0.3); }
+            .mode-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; }
+            .ranks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 3rem; }
+            .rank-card { border: 1px solid var(--border); padding: 1.75rem 1.5rem; text-align: center; position: relative; transition: all 0.3s; background: var(--dark-stone); }
+            .rank-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+            .rank-card.iron::before { background: linear-gradient(to right, #787878, #b0b0b0, #787878); }
+            .rank-card.gold::before { background: linear-gradient(to right, #c9930a, #f0b720, #c9930a); }
+            .rank-card.emerald::before { background: linear-gradient(to right, #1aad5e, #22d474, #1aad5e); }
+            .rank-card.warlord::before { background: linear-gradient(to right, #8b1a1a, #cc3030, #8b1a1a); }
+            .rank-card.champion::before { background: linear-gradient(135deg, #c9930a, #8b1a1a, #c9930a); }
+            .rank-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
+            .rank-name { font-family: "Cinzel", serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+            .rank-price { font-family: "Cinzel Decorative", serif; font-size: 1.5rem; color: var(--text-bright); margin-bottom: 1rem; }
+            .rank-perks { list-style: none; font-size: 0.82rem; color: var(--text-mid); }
+            .rank-perks li { padding: 4px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+            .rank-perks li::before { content: "✦ "; color: var(--mace-gold); font-size: 0.6rem; }
+            .community-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+            @media (max-width: 760px) { .community-inner { grid-template-columns: 1fr; gap: 2rem; } .nav-links { display: none; } nav { padding: 0 1.5rem; } }
+            .community-text .section-header { text-align: left; }
+            .community-text .section-line { margin-left: 0; }
+            .community-body { color: var(--text-mid); margin-top: 1.5rem; font-size: 1.05rem; }
+            .community-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+            .community-link { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--stone); border: 1px solid var(--border); text-decoration: none; color: var(--text-bright); transition: all 0.25s; }
+            .community-link:hover { border-color: var(--mace-gold); background: var(--stone-mid); transform: translateX(6px); }
+            .mace-illustration { display: flex; align-items: center; justify-content: center; font-size: 10rem; filter: drop-shadow(0 0 40px rgba(201, 147, 10, 0.25)); animation: float 4s ease-in-out infinite; position: relative; }
+            @keyframes float { 0%,100% { transform: translateY(0) rotate(-10deg); } 50% { transform: translateY(-12px) rotate(-10deg); } }
+            footer { background: var(--dark-stone); border-top: 1px solid var(--border); padding: 3rem 2rem; text-align: center; }
+            .footer-logo { font-family: "Cinzel Decorative", serif; font-size: 1.5rem; font-weight: 700; color: var(--mace-gold); margin-bottom: 1rem; }
+            .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
+            .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+            
+            /* scroll reveal */
+            .scroll-reveal {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 0.55s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.55s cubic-bezier(0.2, 0.9, 0.4, 1);
+            }
+            .scroll-reveal.revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+    <body>
+
+    <nav>
+        <a href="#" class="nav-logo" aria-label="MaceMC home"><span class="mace-icon"></span> MaceMC</a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#modes">Game Modes</a></li>
+            <li><a href="#ranks">Ranks</a></li>
+            <li><a href="#community">Community</a></li>
+        </ul>
+        <div class="nav-ip" onclick="copyToClipboard('MaceMC.com', this)" aria-label="Copy server IP">MaceMC.com</div>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-ornament">— ✦ ⚔ ✦ —</div>
+            <h1 class="hero-title"><span class="line1">Mace</span><span class="line2">MC</span></h1>
+            <div class="hero-divider"></div>
+            <p class="hero-sub">Minecraft Survival Network</p>
+            <p class="hero-tagline">Where legends are created!</p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn btn-primary" onclick="copyToClipboard('MaceMC.com'); return false;">Join Now</a>
+                <a href="#modes" class="btn btn-secondary"> ◈ Explore Modes </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><div class="stat-number"><span class="online-dot"></span>1+</div><div class="stat-label">ONLINE NOW</div></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><div class="stat-number">12+</div><div class="stat-label">TOTAL PLAYERS</div></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><div class="stat-number">4</div><div class="stat-label">GAME MODES</div></div>
+            </div>
+        </div>
+
+        <div class="ip-banner">
+            <div class="ip-banner-label">Server Address</div>
+            <div class="ip-banner-address" onclick="copyToClipboard('MaceMC.com', this)">⚡ macemc.com ⚡</div>
+        </div>
+
+        <section id="features">
+            <div class="section-header">
+                <div class="section-eyebrow">Why choose us</div>
+                <h2 class="section-title">Core <em>Features</em></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><span class="feature-icon">⚔️</span><h3 class="feature-title">Custom Combat</h3><p class="feature-desc">Refined PvP with unique weapon enchantments, combo systems, and arena-balanced mechanics.</p></div>
+                <div class="feature-card"><span class="feature-icon">🏰</span><h3 class="feature-title">Multiple Gamemodes</h3><p class="feature-desc">Play on our selection of partner servers to ensure you the greatest experience!</p></div>
+                <div class="feature-card"><span class="feature-icon">🛒</span><h3 class="feature-title">Player Economy</h3><p class="feature-desc">A fully player-driven marketplace. Set up shops, trade resources, accumulate wealth.</p></div>
+                <div class="feature-card"><span class="feature-icon">🎯</span><h3 class="feature-title">Seasonal Events</h3><p class="feature-desc">Recurring tournaments, dungeon raids, and world events with exclusive rewards.</p></div>
+                <div class="feature-card"><span class="feature-icon">⚡</span><h3 class="feature-title">Zero Lag</h3><p class="feature-desc">Enterprise-grade hardware ensures smooth gameplay at any player count, 24/7.</p></div>
+                <div class="feature-card"><span class="feature-icon">🤝</span><h3 class="feature-title">Active Staff</h3><p class="feature-desc">Veteran moderation team committed to fair play and a welcoming environment.</p></div>
+            </div>
+        </section>
+
+        <div class="modes-section" id="modes"><section>
+            <div class="section-header"><div class="section-eyebrow">Choose Your Path</div><h2 class="section-title">Game <em>Modes</em></h2><div class="section-line"></div></div>
+            <div class="modes-grid">
+                <div class="mode-card"><span class="mode-emoji">🌍</span><div class="mode-name">Survival</div><span class="mode-tag live">Live</span><p class="mode-desc">Classic survival with land claims, player shops, and a sprawling persistent world.</p></div>
+                <div class="mode-card"><span class="mode-emoji">⚔️</span><div class="mode-name">Factions</div><span class="mode-tag live">Live</span><p class="mode-desc">Form alliances, wage war, raid enemies. Build the most powerful faction.</p></div>
+                <div class="mode-card"><span class="mode-emoji">🏟️</span><div class="mode-name">PvP Arena</div><span class="mode-tag new">New</span><p class="mode-desc">Ranked 1v1 duels, team battles, and weekly tournaments with prize pools.</p></div>
+                <div class="mode-card"><span class="mode-emoji">🗺️</span><div class="mode-name">Sky Wars</div><span class="mode-tag soon">Coming Soon</span><p class="mode-desc">Last player standing on floating islands. Loot fast, outlast every challenger.</p></div>
+            </div>
+        </section></div>
+
+        <section id="ranks">
+            <div class="section-header"><div class="section-eyebrow">Support the Server</div><h2 class="section-title">Claim Your <em>Rank</em></h2><div class="section-line"></div></div>
+            <div class="ranks-grid">
+                <div class="rank-card iron"><div class="rank-name">Iron</div><div class="rank-price">Free <span>/default</span></div><ul class="rank-perks"><li>Basic chat colors</li><li>1 home sethome</li><li>Access to all modes</li></ul></div>
+                <div class="rank-card gold"><div class="rank-name">Gold</div><div class="rank-price">$4.99 <span>/mo</span></div><ul class="rank-perks"><li>Gold name color</li><li>3 set homes</li><li>Fly in own land</li><li>Priority join queue</li></ul></div>
+                <div class="rank-card emerald"><div class="rank-name">Emerald</div><div class="rank-price">$9.99 <span>/mo</span></div><ul class="rank-perks"><li>Emerald gradient name</li><li>6 set homes</li><li>Fly anywhere</li><li>Kit every 24h</li><li>Custom join message</li></ul></div>
+                <div class="rank-card warlord"><div class="rank-name">Warlord</div><div class="rank-price">$19.99 <span>/mo</span></div><ul class="rank-perks"><li>Animated name tag</li><li>10 set homes</li><li>All perks + more</li><li>Exclusive cosmetics</li><li>Early event access</li></ul></div>
+                <div class="rank-card champion"><div class="rank-name">Champion</div><div class="rank-price">$39.99 <span>/mo</span></div><ul class="rank-perks"><li>Legendary gradient name</li><li>Unlimited homes</li><li>All Warlord perks</li><li>Custom join effect</li><li>Staff consultation</li><li>Hall of Fame listing</li></ul></div>
+            </div>
+        </section>
+
+        <div style="background: var(--dark-stone); border-top: 1px solid var(--border);"><section id="community">
+            <div class="community-inner">
+                <div class="community-text"><div class="section-header"><div class="section-eyebrow">Join the Kingdom</div><h2 class="section-title">A <em>Community</em><br>Like No Other</h2><div class="section-line"></div></div>
+                <div class="community-body"><p>MaceMC is more than a server — it's a home for thousands of players who love building, fighting, and exploring together. Whether you're a lone wolf or clan leader, there's a place for you here.</p><p>Join our Discord to stay updated on events, patches, tournaments, and everything happening in the realm.</p></div>
+                <div class="community-links"><a href="#" class="community-link"><span class="link-icon">💬</span><div class="link-info"><div class="link-name">Discord Server</div><div class="link-desc">Chat, support & announcements</div></div><span class="link-arrow">→</span></a>
+                <a href="#" class="community-link"><span class="link-icon">📜</span><div class="link-info"><div class="link-name">Server Rules</div><div class="link-desc">Fair play for everyone</div></div><span class="link-arrow">→</span></a>
+                <a href="#" class="community-link"><span class="link-icon">🗓️</span><div class="link-info"><div class="link-name">Upcoming Events</div><div class="link-desc">Tournaments & seasonal content</div></div><span class="link-arrow">→</span></a></div></div>
+                <div class="mace-illustration" aria-label="Mace symbol">🪓</div>
+            </div>
+        </section></div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">MaceMC</div>
+        <p class="footer-tagline">"Forge your legend. Build your empire. Leave your mark."</p>
+        <div class="footer-links"><a href="#">Home</a><a href="#modes">Game Modes</a><a href="#ranks">Store</a><a href="#">Rules</a><a href="#">Discord</a><a href="#">Staff Apply</a></div>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2025 MaceMC · Not affiliated with Mojang or Microsoft · MaceMC.com</p>
+    </footer>
+
+    <script>
+        function showToast(message) {
+            let toast = document.querySelector('.toast-msg');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.className = 'toast-msg';
+                document.body.appendChild(toast);
+            }
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        window.copyToClipboard = function(ip, element) {
+            navigator.clipboard.writeText(ip).then(() => {
+                showToast(`📋 Copied: ${ip}`);
+                if (element && element.classList && element.classList.contains('nav-ip')) {
+                    const tempSpan = document.createElement('span');
+                    tempSpan.textContent = '✓ Copied!';
+                    tempSpan.style.position = 'absolute';
+                    tempSpan.style.top = '-28px';
+                    tempSpan.style.left = '50%';
+                    tempSpan.style.transform = 'translateX(-50%)';
+                    tempSpan.style.background = '#1aad5e';
+                    tempSpan.style.color = 'white';
+                    tempSpan.style.fontSize = '0.6rem';
+                    tempSpan.style.padding = '3px 8px';
+                    tempSpan.style.borderRadius = '2px';
+                    tempSpan.style.whiteSpace = 'nowrap';
+                    tempSpan.style.fontFamily = 'Cinzel, serif';
+                    element.style.position = 'relative';
+                    element.appendChild(tempSpan);
+                    setTimeout(() => tempSpan.remove(), 1500);
+                }
+            }).catch(() => showToast("Press Ctrl+C to copy"));
+        };
+
+        // SCROLL REVEAL
+        const revealElements = document.querySelectorAll('.feature-card, .mode-card, .rank-card, .community-link');
+        revealElements.forEach(el => el.classList.add('scroll-reveal'));
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+        
+        revealElements.forEach(el => observer.observe(el));
+        
+        window.addEventListener('load', () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) el.classList.add('revealed');
+            });
+        });
+    </script>
+    </body>
+</html>
