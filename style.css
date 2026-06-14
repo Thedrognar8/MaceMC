@@ -759,18 +759,18 @@
             .rank-card.pro::before {
                 background: linear-gradient(
                     to right,
-                    #7f8c8d,
-                    #95a5a6,
-                    #7f8c8d
+                    #e5ff00,
+                    #b3ff00,
+                    #fbff00
                 );
             }
 
             .rank-card.elite::before {
                 background: linear-gradient(
                     to right,
-                    #d35400,
-                    #e67e22,
-                    #d35400
+                    #7400d3,
+                    #9822e6,
+                    #7f00d3
                 );
             }
 
@@ -833,15 +833,15 @@
             }
 
             .badge-pro {
-                background-color: #555555;
+                background-color: #d4ec00a2;
                 color: #ffffff;
-                border-color: #373737;
+                border-color: #bbff00a1;
             }
 
             .badge-elite {
-                background-color: #e67e22;
+                background-color: #7100f1;
                 color: #ffffff;
-                border-color: #d35400;
+                border-color: #6d00d3;
             }
 
             .badge-mvp {
